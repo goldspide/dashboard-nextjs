@@ -60,7 +60,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="flex flex-col gap-2 w-[300px] min-w-[300px] border-r min-h-screen p-4">
+    <div className=" fixed flex flex-col gap-2 w-[300px] min-w-[300px] border-r min-h-screen p-4">
       <div>
         <UserItems></UserItems>
       </div>
@@ -70,7 +70,7 @@ const Sidebar = () => {
             {menuList.map((menu: any, key: number) => (
               <CommandGroup key={key} heading={menu.group}>
                 {menu.items.map((option: any, optionKey: number) => 
-                  <CommandItem key={optionKey} className="flex gap-2 cursor-pointer">{option.icon}{option.text}</CommandItem>
+                  <CommandItem key={optionKey} className="flex gap-2 cursor-pointer ">{option.icon}{option.text}</CommandItem>
                 )}
               </CommandGroup>
             ))}
