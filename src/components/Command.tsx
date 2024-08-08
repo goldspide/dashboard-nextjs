@@ -1,3 +1,4 @@
+'use client'
 import {
     CalendarIcon,
     EnvelopeClosedIcon,
@@ -17,13 +18,14 @@ import {
     CommandSeparator,
     CommandShortcut,
   } from "@/components/ui/command"
+import { useState } from "react"
   
   export function CommandDemo() {
-    CalendarIcon
+    const [open, setOpen] = useState<boolean>(false);
     return (
-      <Command className="rounded-lg border shadow-md">
+      <Command className="rounded-lg border">
         <CommandInput placeholder="Type a command or search..." />
-        <CommandList>
+{      open &&  <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup heading="Suggestions">
             <CommandItem>
@@ -57,7 +59,7 @@ import {
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>
           </CommandGroup>
-        </CommandList>
+        </CommandList>}
       </Command>
     )
   }
